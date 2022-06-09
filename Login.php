@@ -1,4 +1,5 @@
 <?php
+session_start();
 $host="localhost";
 $user="root";
 $pass="";
@@ -51,7 +52,14 @@ else
                                 $userData=mysqli_fetch_assoc($userData);
                                 if(!empty($userData))
                                 {
-                                    header()
+                                    $_SESSION['type']=$userData['type'];
+                                    $_SESSION['id']=$id;
+                                    $_SESSION['name']=$userData['user_name'];
+                                    
+                                    if($_SESSION['type']== 0)
+                                    {
+                                        header("location:admin.php");
+                                    }
                                 }
                                 else
                                 {
@@ -73,6 +81,7 @@ else
                         echo"<br /> Please enter user id";
                     }
                 }
+                
             ?>
             
             </center>
