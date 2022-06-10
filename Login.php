@@ -13,20 +13,7 @@
 </html>
 
 <?php
-session_start();
-$host="localhost";
-$user="root";
-$pass="";
-$db="loginform";
-if ($conn=mysqli_connect($host,$user,$pass,$db))
-{
-    echo"Connected"; 
-}
-else
-{
-    echo"Not Connected" . mysqli_error($conn);
-}
-    
+include "DBConn.php";   
 ?>
 <html>
     <head>
