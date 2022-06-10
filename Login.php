@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+</body>
+</html>
+
 <?php
 session_start();
 $host="localhost";
@@ -20,23 +34,31 @@ else
         <meta charset="utf-8" />
     </head>
     <body>
-        <div style="position: absolute; width: 400px;height:150px;left:500px;top:150px;border:solid; padding:20px;">
-            <center>
-            <form action="" method="post">
-            <table>
-                <tr>
-                    <td><label>User Id : </label></td>
-                    <td><input type="text" name="id" value="" /></td>
-                </tr>
-                <tr>
-                    <td><label>Password : </label></td>
-                    <td><input type="password" name="pass" value="" /> </td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="login" value="Login"></td>
-                </tr>
-            </table>                                                               
-            </form>
+        <div class="icon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+            <div class="center">   
+    <form action="" method="post">
+        <div class ="txt_field">
+            <input type="text" name="id" value="" required>
+            <span></span>
+            <label>Username</label>
+        </div>
+
+        <div class ="txt_field">
+            <input name ="pass" type="password" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+        
+            <div class="pass" name="pass" value="">Forgot Password?</div>
+            <input type="submit" name="login" value="Login">
+            <div class="signup_link">
+                Not a member? <a href="#">SignUp</a>
+            </div>
+        </div>
+    </form>
+</div>
             <?php
                 if(isset($_POST['login']))
                 {
@@ -82,9 +104,6 @@ else
                     }
                 }
                 
-            ?>
-            
-            </center>
-        </div>
+            ?>          
     </body>
 </html>
