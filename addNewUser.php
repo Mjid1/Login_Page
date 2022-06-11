@@ -13,7 +13,7 @@ else
 }
 include "DBConn.php"; 
 ?>
-<div style ="position: absolute; left: 400px; width: 500px ; top:150px ; border:solid;">
+<div style ="position: absolute; left: 400px; width: 500px ; top:150px ; border:solid; padding:20px;">
 <center>    
 <form action="" method="post">
         <table>

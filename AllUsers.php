@@ -26,14 +26,18 @@ else
             <td></td>
         </tr>
         <?php
+        if(isset($_GET['id']))
+        {
+            mysqli_query($conn,"DELETE FROM `t_user` WHERE `user_id` = '".$_GET['id']."'");
+        }
             $userData=mysqli_query($conn,"select * from t_user Where type=1");
             while($row=mysqli_fetch_array($userData))
             {
                 echo "<tr style='text-align: center;'>";
                 echo "<td>".$row['user_id']."</td>";
                 echo "<td>".$row['user_name']."</td>";
-                echo "<td><a href=''>Edit</a></td>";
-                echo "<td><a href=''>Delete</a></td>";
+                echo "<td><a href='allUsers.php?id=$row[user_id]'>Delete</a></td>";
+                echo "<td><a href='editUser.php?id=$row[user_id]'>Edit</a></td>";
                 echo "</tr>";
             }
         ?>
