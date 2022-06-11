@@ -13,7 +13,8 @@
 </html>
 
 <?php
-include "DBConn.php";   
+    session_start();
+    include "DBConn.php";
 ?>
 <html>
     <head>
@@ -46,7 +47,7 @@ include "DBConn.php";
         </div>
     </form>
 </div>
-            <?php
+            <?php                
                 if(isset($_POST['login']))
                 {
                     if(!empty($_POST['id']))
@@ -57,10 +58,10 @@ include "DBConn.php";
                             {
                                 $id=$_POST['id'];
                                 $pass=$_POST['pass'];
-                                $userData=mysqli_query($conn,"select * from t_user where user_id='$id' and user_pass='$pass'");
+                                $userData=mysqli_query($conn,"select `user_id`, `user_name`, `user_pass`, `type` from t_user where user_id='$id' and user_pass='$pass'");
                                 $userData=mysqli_fetch_assoc($userData);
                                 if(!empty($userData))
-                                {
+                                {                                 
                                     $_SESSION['type']=$userData['type'];
                                     $_SESSION['id']=$id;
                                     $_SESSION['name']=$userData['user_name'];
