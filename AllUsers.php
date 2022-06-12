@@ -20,6 +20,7 @@ else
 <div style="position: absolute ; left:500px; width:500px; top:150px;"> 
     <table style="width:100%;" border='1'>
         <tr style="text-align: center;">
+            <td><strong>Image :</strong></td>
             <td><strong>User ID :</strong></td>  
             <td><strong>User Name :</strong></td> 
             <td></td>
@@ -34,6 +35,7 @@ else
             while($row=mysqli_fetch_array($userData))
             {
                 echo "<tr style='text-align: center;'>";
+                echo "<td><img src='getImg.php?id=$row[user_id]' width='120' height='150'/></td>";
                 echo "<td>".$row['user_id']."</td>";
                 echo "<td>".$row['user_name']."</td>";
                 echo "<td><a href='allUsers.php?id=$row[user_id]'>Delete</a></td>";

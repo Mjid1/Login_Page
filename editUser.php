@@ -32,7 +32,7 @@ if(!isset($_POST['save']))
             <tr>
                 <td></td>
                 <td colspan="2" style="text-align: center">
-                    <img src="Images/Profile.png" width="100" height="100"/>
+                    <img src="getImage.php?id=<?php echo $_GET['id']?>" width="100" height="100"/>
                 </td>
             </tr>
             <tr>
