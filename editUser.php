@@ -69,7 +69,7 @@ if(!isset($_POST['save']))
                 {
                     $img=addslashes(file_get_contents($_FILES['img']['tmp_name']));
                 }
-                mysqli_query($conn,"update t_user set user_name='$name',user_pass='$pass','img'='$img' where user_id=$_GET[id]");
+                mysqli_query($conn,"update t_user set user_name='$name',user_pass='$pass',img='$img' where user_id=$_GET[id]");
                 echo "<br /><br /> <center> <h1> User Data Updated Successfully </h1> </center>";
             }
             else
